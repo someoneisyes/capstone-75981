@@ -112,7 +112,7 @@ def create_app(test_config=None):
         try:
             return jsonify({
                 'success': True,
-                'movies': format_actor,
+                'actors': format_actor,
                 'total_actors': len(actors)
             }), 200
         except BaseException:
