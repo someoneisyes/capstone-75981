@@ -7,7 +7,7 @@ from datetime import datetime
 from flask_migrate import Migrate
 
 database_name = "capstone"
-database_path = 'postgres://etknloghnczdbu:6d666cf194d06f579b2d2841ae5b81f4caabc9dc469741e39710e10f3a8eefa5@ec2-34-204-128-77.compute-1.amazonaws.com:5432/d67s4ijbv4ph20'
+database_path = 'postgresql://etknloghnczdbu:6d666cf194d06f579b2d2841ae5b81f4caabc9dc469741e39710e10f3a8eefa5@ec2-34-204-128-77.compute-1.amazonaws.com:5432/d67s4ijbv4ph20'
 
 db = SQLAlchemy()
 
