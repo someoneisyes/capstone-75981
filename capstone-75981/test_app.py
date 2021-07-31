@@ -17,16 +17,16 @@ class CapstoneTestCase(unittest.TestCase):
         setup_db(self.app, self.database_path)
 
         self.casting_assistant_token = {
-            'authorization': 'Bearer eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6IjZ5SjJLZTA5dVMyaWZWZjZYUGNzaiJ9.eyJpc3MiOiJodHRwczovL25hcmF0LWF1dGguZXUuYXV0aDAuY29tLyIsInN1YiI6ImF1dGgwfDYwZDA4ZGYyYjcyYTlmMDA2YTI5NmY5MiIsImF1ZCI6ImNhcHN0b25lLWFwaSIsImlhdCI6MTYyNzY0MTI2NywiZXhwIjoxNjI3NjQ4NDY3LCJhenAiOiJTSFJUb01DWGhYZGF6eXN6anpWMUtMVVlkaGFxOEUxNyIsInNjb3BlIjoiIiwicGVybWlzc2lvbnMiOlsiZ2V0OmFjdG9ycyIsImdldDptb3ZpZXMiXX0.M8LWKFSrmOnaiQnrN66QFSQB_diasdbTiDCd-R0ysjEl5M7u1IhZhBwJ3pqGhHswxHMaTkoTtjaBV0bdvKlLYDneCO-b6pjmFD3poyPEMPGTfZczgj3T0OAzkwToKeiC1shFLOow3-fcl0m-9MJcAPtam3KzidIzjef18EhcWVAOZYsLghd3nWsBu90_In_sTdeUh8_4CMJmmPKsrS_UQc35Na1niPye1mer9xGcp9bKDl6AZ54pDKPQRlvosMv2PfE8ZRJ0yAveR4UsP099jBsuGkby7BeYSPqXyvKzrhc4NEAAVTVwx7GNmtKCfjav8OeJukS7Oqx5eIJADqzN9w'
-        }
+            'authorization': "{}".format(os.environ.get('ASSISTANT'))
+            }
 
         self.casting_director_token = {
-            'authorization': 'Bearer eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6IjZ5SjJLZTA5dVMyaWZWZjZYUGNzaiJ9.eyJpc3MiOiJodHRwczovL25hcmF0LWF1dGguZXUuYXV0aDAuY29tLyIsInN1YiI6ImF1dGgwfDYxMDI1Mzk3ODU0MWE2MDA3MWJlOTZmYyIsImF1ZCI6ImNhcHN0b25lLWFwaSIsImlhdCI6MTYyNzY0MTIxOSwiZXhwIjoxNjI3NjQ4NDE5LCJhenAiOiJTSFJUb01DWGhYZGF6eXN6anpWMUtMVVlkaGFxOEUxNyIsInNjb3BlIjoiIiwicGVybWlzc2lvbnMiOlsiZGVsZXRlOmFjdG9ycyIsImdldDphY3RvcnMiLCJnZXQ6bW92aWVzIiwicGF0Y2g6YWN0b3JzIiwicGF0Y2g6bW92aWVzIiwicG9zdDphY3RvcnMiXX0.WfJMjGfkLDsnpI2lUryr6pSfYnOvHIskzpnCjyFqh-A8cy845f_kF324pLorE-qblPtPtd4fZv_AzjE1QpOJkiKabkaYaUv9ofIWPYo-b0EHmgp8VjIVb4d0cBHhNyBw2wAt3K0D0oS4W-HFB9ZiBADhSehMDM29AeT8UW4B7AP_lMydNSic4QhaJqVvZymB64h7SBsPAk0BR7cgpNzJT_0TnHLmUPmCZTjWuhm4JaEud3o_Gfs2kxXkyNQYl8dFNWyfhBursuwpWCwHt1OcEG6KqTLfvph-vQY78z25wXIoYsq4nKNmNYnQp86Pl0lghGem8pqJ-Cf5nraoI9ctCg'
-        }
+            'authorization': "{}".format(os.environ.get('DIRECTOR'))
+            }
 
         self.executive_producer_token = {
-            'authorization': 'Bearer eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6IjZ5SjJLZTA5dVMyaWZWZjZYUGNzaiJ9.eyJpc3MiOiJodHRwczovL25hcmF0LWF1dGguZXUuYXV0aDAuY29tLyIsInN1YiI6ImF1dGgwfDYwYjRiNjE5ZDFjNzUzMDA3MDkwMmExMiIsImF1ZCI6ImNhcHN0b25lLWFwaSIsImlhdCI6MTYyNzY0MTAzOSwiZXhwIjoxNjI3NjQ4MjM5LCJhenAiOiJTSFJUb01DWGhYZGF6eXN6anpWMUtMVVlkaGFxOEUxNyIsInNjb3BlIjoiIiwicGVybWlzc2lvbnMiOlsiZGVsZXRlOmFjdG9ycyIsImRlbGV0ZTptb3ZpZXMiLCJnZXQ6YWN0b3JzIiwiZ2V0Om1vdmllcyIsInBhdGNoOmFjdG9ycyIsInBhdGNoOm1vdmllcyIsInBvc3Q6YWN0b3JzIiwicG9zdDptb3ZpZXMiXX0.UgbvAYJ2LYHREOpt8GI1MP3jBcA2p1NKBnOEmjK_vR6wWFN1vvZcVYDjdVIHLJdxNEjAitmGYIFfovlLtbKMlzgOZCB3TRQqXTbBDfVQIh3-Z8ZtvCNbPpM01xNRssiPEhqpcPRzAmbaGox8WcO-vSshsMxR8i0cotc0D3DbilUZCK1-uSn_zz0e0hOormAluaJWs-ymQYb1BKnOjeYoi6qB7dfb4Ng-J6c9-M0vN6_0zTlRhGjugXBtcxoB3HHKpiuhByw7oefXGGmoLcrHcXCtxrlsb87RZtNogjb20KTIvewWfRg7xfJ0mI7e_iluG4GrWjmewRn8M3N5Ni9s9w'
-        }
+            'authorization': "{}".format(os.environ.get('PRODUCER'))
+            }
 
         self.test_movie = {
             'title': 'Very Good Movie 2',
@@ -90,7 +90,7 @@ class CapstoneTestCase(unittest.TestCase):
         )
         db.session.add_all([actor1, actor2, actor3, movie1, movie2, movie3])
         db.session.commit()
-
+        
     def tearDown(self):
         """Executed after reach test"""
         pass

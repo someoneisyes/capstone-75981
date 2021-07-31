@@ -1,4 +1,5 @@
 # Capstone project
+- The Casting Agency models a company that is responsible for creating movies and managing and assigning actors to those movies. This project is a system to simplify and streamline the process.
 
 ## Getting Started
 
